@@ -113,7 +113,7 @@ function rerenderHabbitItem(activeHabbit) {
 				${activeHabbit.days[habbit].comment}
 			</div>
 			<button class="habbit__delete-day" onclick="removeDay(${habbit})">
-				<img src="/img/deleteIcon.svg" alt="Delete day iccn" />
+				<img src="/img/deleteIcon.svg" alt="удалить день ${Number(habbit) + 1}" />
 			</button>
 		</div>`;
 		page.content.contentDiv.appendChild(element);
@@ -127,6 +127,7 @@ function rerender(activeHabbitId) {
 	if (!activeHabbit) {
 		return;
 	}
+	document.location.replace(document.location.pathname + '#' + activeHabbitId);
 	rerenderMenu(activeHabbit);
 	rerenderHead(activeHabbit);
 	rerenderHabbitItem(activeHabbit);
@@ -213,5 +214,11 @@ function addNewHabbit(event) {
 
 (() => {
 	loadData();
-	rerender(habbits[0].id);
+	const hashId = Number(document.location.hash.replace('#', ''));
+	const urlId = habbits.find(habbit => habbit.id == hashId);
+	if (urlId) {
+		rerender(urlId.id);
+	} else {
+		rerender(habbits[0].id);
+	}
 })();
