@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./css/main.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="app">
+			<div class="left_panel">
+				<img class="logo__site" src="./img/logo.svg" alt="Логотип сайта" />
+				<nav class="menu">
+					<div class="menu__list"></div>
+					<button class="menu__add" onclick="togglePopUp()">
+						<img src="./img/addIcon.svg" alt="Add hobby icon" />
+					</button>
+				</nav>
+			</div>
+			<div class="right_panel">
+				<header>
+					<h1 class="header__h1">-</h1>
+					<div class="progress">
+						<div class="progress__text">
+							<div class="progress__name">Прогресс</div>
+							<div class="progress__percent">%</div>
+						</div>
+						<div class="progress__bar">
+							<div class="progress__cover-bar"></div>
+						</div>
+					</div>
+				</header>
+				<main>
+					<div id="days"></div>
+					<div class="habbit">
+						<div class="habbit__day"></div>
+						<form class="habbit__form" onsubmit="addDays(event)">
+							<input
+								class="input_icon"
+								type="text"
+								placeholder="Коментарии"
+								name="comment"
+							/>
+							<img
+								class="input__icon"
+								src="/img/addComent.svg"
+								alt="Поле добавления комментария"
+							/>
+							<button class="button" type="submit">Готово</button>
+						</form>
+					</div>
+				</main>
+			</div>
+			<div class="cover cover__hidden">
+				<div class="popup">
+					<h2>новая привычка</h2>
+					<div class="icon-label">Иконка</div>
+					<div class="icon-select">
+						<button class="icon icon_active" onclick="setIcon(this, 'sport')">
+							<img src="./img/sport.svg" alt="иконка физ занятый" /></button
+						><button class="icon" onclick="setIcon(this, 'food')">
+							<img src="./img/food.svg" alt="Иконка еды" /></button
+						><button class="icon" onclick="setIcon(this, 'water')">
+							<img src="./img/water.svg" alt="Иконка воды" />
+						</button>
+					</div>
+					<form class="popup__form" onsubmit="addNewHabbit(event)">
+						<input type="text" name="name" placeholder="Названия" />
+						<input type="text" name="icon" hidden value="sport" />
+						<input type="number" name="target" placeholder="Цель" />
+						<button class="button" type="submit">добавить</button>
+					</form>
+					<button class="popup__close" onclick="togglePopUp()">
+						<img
+							src="./img/closeIcon.svg"
+							alt="кнопка закрытия окна добавления"
+						/>
+					</button>
+				</div>
+			</div>
+		</div>
+		<script src="./scripts/main.js"></script>
+	</body>
+</html>
