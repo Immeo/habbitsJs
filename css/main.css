@@ -44,9 +44,9 @@ body {
 	height: 45px;
 	border-radius: 14px;
 	box-shadow: 0 8px 14px 0 rgba(62, 107, 224, 0.12);
-	background: #fff;
 	border: none;
 	cursor: pointer;
+	background: #fff;
 }
 
 .menu__item:hover {
@@ -118,8 +118,8 @@ h1 {
 	width: 100%;
 	height: 5px;
 	position: relative;
-	background-color: #e6e9ed;
 	border-radius: 4px;
+	background-color: #e6e9ed;
 }
 
 .progress__cover-bar {
@@ -234,6 +234,7 @@ input::placeholder {
 .cover__hidden {
 	display: none;
 }
+
 .popup {
 	width: 100%;
 	max-width: 600px;
